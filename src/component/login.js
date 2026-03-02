@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./login.css";
+
+import "../style/login.css"
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -7,18 +8,13 @@ const Login = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setError("");
     if (password !== confirmPassword) {
       return setError("Passwords do not match");
     }
-
     setLoading(true);
-
-    
-
   };
 
   return (
