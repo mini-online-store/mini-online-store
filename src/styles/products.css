@@ -1,0 +1,53 @@
+/* src/styles/ProductGrid.css */
+
+.product-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Colorful gradient background */
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  min-height: 100vh;
+}
+
+.product-grid-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Glass effect product cards */
+.product-grid > * {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.product-grid > *:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-grid-container {
+    padding: 40px 15px;
+  }
+
+  .product-grid-title {
+    font-size: 1.8rem;
+  }
+}

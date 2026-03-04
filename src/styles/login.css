@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Card */
+.login-form {
+  background: white;
+  padding: 32px;
+  border-radius: 18px;
+  width: 340px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #764ba2;
+  box-shadow: 0 0 0 2px rgba(118, 75, 162, 0.2);
+  outline: none;
+}
+
+/* Button (different style than signup) */
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background: #111827;  /* dark button instead of gradient */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-button:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+/* Extra link */
+.login-extra {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.login-extra a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-extra a:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
