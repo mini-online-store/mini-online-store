@@ -1,13 +1,12 @@
 /* src/styles/ProductGrid.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 .product-grid-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 60px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-  /* Warm gradient from terracotta to bright orange */
-  background: linear-gradient(135deg, #CC561E, #FF6500);
+  padding: 60px 30px;
+  font-family: 'Inter', sans-serif;
+  background: #fdfbd4;
   min-height: 100vh;
 }
 
@@ -15,41 +14,172 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #38240d;
+  font-weight: 600;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
-/* Glass effect product cards */
+/* Warm, earthy color palette for cards */
 .product-grid > * {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(56, 36, 13, 0.1);
+  box-shadow: 0 10px 25px -5px rgba(56, 36, 13, 0.08);
 }
 
-/* Hover effect */
+/* Rich, varied earthy tones */
+.product-grid > *:nth-child(5n+1) {
+  background: #f9e5d2;  /* Warm peach */
+}
+
+.product-grid > *:nth-child(5n+2) {
+  background: #eedcc9;  /* Tan */
+}
+
+.product-grid > *:nth-child(5n+3) {
+  background: #f5d9c7;  /* Light terracotta */
+}
+
+.product-grid > *:nth-child(5n+4) {
+  background: #e6d5b8;  /* Warm beige */
+}
+
+.product-grid > *:nth-child(5n+5) {
+  background: #f2e0c9;  /* Creamy coffee */
+}
+
 .product-grid > *:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 15px 30px rgba(204, 86, 30, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -8px rgba(56, 36, 13, 0.2);
+  border-color: rgba(56, 36, 13, 0.2);
+  background: #ffffff;
 }
 
-/* Responsive */
+.product-emoji {
+  font-size: 3.5rem;
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c1e0e;  /* Darker brown for contrast */
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.product-description {
+  color: #4a3a2a;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(56, 36, 13, 0.2);
+}
+
+.product-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c1e0e;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 5px 12px;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+}
+
+.add-to-cart-btn {
+  color: #fdfbd4;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(56, 36, 13, 0.2);
+  letter-spacing: 0.3px;
+}
+
+/* Button colors complementing card backgrounds */
+.product-grid > *:nth-child(5n+1) .add-to-cart-btn {
+  background: #a56b4b;  /* Warm brown */
+}
+
+.product-grid > *:nth-child(5n+2) .add-to-cart-btn {
+  background: #7b5a44;  /* Medium brown */
+}
+
+.product-grid > *:nth-child(5n+3) .add-to-cart-btn {
+  background: #9d6b4e;  /* Terracotta brown */
+}
+
+.product-grid > *:nth-child(5n+4) .add-to-cart-btn {
+  background: #63503e;  /* Dark taupe */
+}
+
+.product-grid > *:nth-child(5n+5) .add-to-cart-btn {
+  background: #8b6349;  /* Coffee brown */
+}
+
+.product-grid > *:nth-child(5n+1) .add-to-cart-btn:hover {
+  background: #b87e5e;
+}
+
+.product-grid > *:nth-child(5n+2) .add-to-cart-btn:hover {
+  background: #8e6b53;
+}
+
+.product-grid > *:nth-child(5n+3) .add-to-cart-btn:hover {
+  background: #b27e61;
+}
+
+.product-grid > *:nth-child(5n+4) .add-to-cart-btn:hover {
+  background: #7a634f;
+}
+
+.product-grid > *:nth-child(5n+5) .add-to-cart-btn:hover {
+  background: #a0785c;
+}
+
 @media (max-width: 768px) {
   .product-grid-container {
-    padding: 40px 15px;
+    padding: 40px 20px;
   }
-
+  
   .product-grid-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+  
+  .product-emoji {
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
   }
 }
