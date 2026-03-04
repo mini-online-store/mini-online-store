@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/login.css"
 
@@ -8,13 +9,18 @@ const Login = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     setError("");
     if (password !== confirmPassword) {
       return setError("Passwords do not match");
     }
-    setLoading(true);
+     navigate("/products", { 
+        state: { message: "Account created successfully! Please login." }
+      });
+    // setLoading(true);
   };
 
   return (

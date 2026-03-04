@@ -6,8 +6,8 @@
   padding: 60px 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  /* Colorful gradient background */
-  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  /* Warm gradient from terracotta to bright orange */
+  background: linear-gradient(135deg, #CC561E, #FF6500);
   min-height: 100vh;
 }
 
@@ -18,6 +18,7 @@
   color: white;
   font-weight: bold;
   letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .product-grid {
@@ -33,12 +34,13 @@
   border-radius: 15px;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Hover effect */
 .product-grid > *:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 15px 30px rgba(204, 86, 30, 0.3);
 }
 
 /* Responsive */

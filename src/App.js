@@ -1,20 +1,17 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import Product from './component/Product.js';
-// import products from './component/products.js'
+import Products from './component/products.js';
 import productsData from './data/product.js';
 import Login from './component/login.js';
 import Signup from './component/signup.js';
 
 function App() {
-
   const [cart, setCart] = useState([]);
 
   const handleAddToCart = (product) => {
     setCart([...cart, product]);
     console.log('Added to cart:', product);
   }
-  
 
   return (
     <BrowserRouter>
@@ -24,9 +21,9 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route 
-          path="/product" 
+          path="/products" 
           element={
-            <Product 
+            <Products
               products={productsData} 
               onAddToCart={handleAddToCart} 
             />
