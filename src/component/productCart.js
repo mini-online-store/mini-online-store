@@ -3,31 +3,46 @@ import React from 'react';
 import '../styles/product.css';
 
 const ProductCard = ({ product, onAddToCart }) => {
-  // Check if product exists
   if (!product) {
     return null;
   }
 
-  const { id, name, price, image, description } = product;
+  const { name, price, image, description } = product;
 
   const handleAddToCart = () => {
     console.log('Adding product:', product);
     onAddToCart(product);
   };
 
+  const isImagePath =
+    typeof image === 'string' &&
+    (image.startsWith('/image/') ||
+      image.endsWith('.jpg') ||
+      image.endsWith('.jpeg') ||
+      image.endsWith('.png') ||
+      image.endsWith('.webp'));
+
   return (
     <div className="product-card">
       <div className="product-image">
-        <span className="product-emoji">{image}</span>
+        {isImagePath ? (
+          <img
+            src={image}
+            alt={name}
+            className="product-img-tag"
+          />
+        ) : (
+          <span className="product-emoji">{image}</span>
+        )}
       </div>
-      
+
       <div className="product-details">
         <h3 className="product-name">{name}</h3>
         <p className="product-description">{description}</p>
-        
+
         <div className="product-footer">
           <span className="product-price">${price}</span>
-          <button 
+          <button
             className="add-to-cart-btn"
             onClick={handleAddToCart}
             aria-label={`Add ${name} to cart`}

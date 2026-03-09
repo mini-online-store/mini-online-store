@@ -5,6 +5,7 @@ import productsData from './data/product.js';
 import Login from './component/login.js';
 import Signup from './component/signup.js';
 import Navbar from './component/Navbar.js';
+import Cart from './component/cart.js';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -31,6 +32,10 @@ function App() {
               onAddToCart={handleAddToCart} 
             />
           } 
+        />
+        <Route 
+          path="/cart" 
+          element={<Cart cart={cart} />} 
         />
       </Routes>
     </BrowserRouter>
