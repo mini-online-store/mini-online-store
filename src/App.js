@@ -13,7 +13,11 @@ function App() {
   const handleAddToCart = (product) => {
     setCart([...cart, product]);
     console.log('Added to cart:', product);
-  }
+  };
+
+  const handleRemoveFromCart = (indexToRemove) => {
+    setCart(cart.filter((_, index) => index !== indexToRemove));
+  };
 
   return (
     <BrowserRouter>
@@ -35,7 +39,7 @@ function App() {
         />
         <Route 
           path="/cart" 
-          element={<Cart cart={cart} />} 
+          element={<Cart cart={cart} onRemoveFromCart={handleRemoveFromCart} />} 
         />
       </Routes>
     </BrowserRouter>

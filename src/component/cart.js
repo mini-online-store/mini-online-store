@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/cart.css';
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, onRemoveFromCart }) => {
   if (!cart || cart.length === 0) {
     return (
       <div className="cart-page">
@@ -30,7 +30,17 @@ const Cart = ({ cart }) => {
                 </div>
               )}
             </div>
-            <div className="cart-item-price">${item.price}</div>
+            <div className="cart-item-right">
+              <div className="cart-item-price">${item.price}</div>
+              {onRemoveFromCart && (
+                <button
+                  className="cart-remove-btn"
+                  onClick={() => onRemoveFromCart(index)}
+                >
+                  Remove
+                </button>
+              )}
+            </div>
           </li>
         ))}
       </ul>

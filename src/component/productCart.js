@@ -7,42 +7,29 @@ const ProductCard = ({ product, onAddToCart }) => {
     return null;
   }
 
-  const { name, price, image, description } = product;
+  const { id, name, price, image, description, details } = product;
 
   const handleAddToCart = () => {
     console.log('Adding product:', product);
     onAddToCart(product);
   };
 
-  const isImagePath =
-    typeof image === 'string' &&
-    (image.startsWith('/image/') ||
-      image.endsWith('.jpg') ||
-      image.endsWith('.jpeg') ||
-      image.endsWith('.png') ||
-      image.endsWith('.webp'));
-
   return (
     <div className="product-card">
       <div className="product-image">
-        {isImagePath ? (
-          <img
-            src={image}
-            alt={name}
-            className="product-img-tag"
-          />
-        ) : (
-          <span className="product-emoji">{image}</span>
-        )}
+        <span className="product-emoji">{image}</span>
       </div>
-
+      
       <div className="product-details">
         <h3 className="product-name">{name}</h3>
         <p className="product-description">{description}</p>
-
+        {details && (
+          <p className="product-extra-details">{details}</p>
+        )}
+        
         <div className="product-footer">
           <span className="product-price">${price}</span>
-          <button
+          <button 
             className="add-to-cart-btn"
             onClick={handleAddToCart}
             aria-label={`Add ${name} to cart`}

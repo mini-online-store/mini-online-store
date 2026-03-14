@@ -5,8 +5,9 @@ const products = [
     id: 1,
     name: "Wireless Headphones",
     price: 99.99,
-    image: "/image/d016298b-eb65-4c54-8d7c-8adbe9490ffc.jpg",
-    description: "High-quality wireless headphones with noise cancellation."
+    image: "🎧",
+    description: "High-quality wireless headphones with noise cancellation.",
+    details: "Bluetooth 5.0, 30-hour battery life, includes carrying case."
   },
   {
     id: 2,
